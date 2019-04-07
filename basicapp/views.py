@@ -9,7 +9,6 @@ def base(request):
     return render(request,'basicapp/base.html')
 def index(request):
      return render(request,'basicapp/index.html')
-
 def register(request):
       registered = False
       if request.method =='POST':
@@ -25,3 +24,5 @@ def register(request):
            user_form = UserForm()
       return render(request,'basicapp/register.html',
                        {'user_form':user_form,'registered':registered})
+def quiz(request):
+     return render(request,'basicapp/quiz.html')
