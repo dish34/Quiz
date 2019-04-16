@@ -25,7 +25,7 @@ SECRET_KEY = '(tuqi(etua67k36jx&mbygy(q5e8@jn_qr_x)j!r+(t4t*qo(*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://dish2.pythonanywhere.com']
+ALLOWED_HOSTS = ['dish2.pythonanywhere.com']
 
 
 # Application definition
