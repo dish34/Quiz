@@ -3,26 +3,47 @@
 
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'css/quiz.css' %}">
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded',function(){
+
+  document.querySelector('button').onclick=count;
+    let c=1;
+    function count(){
+     if(c!=5)
+       c++;
+     else {
+       c--;
+     }
+     document.querySelector('#welcome').innerHTML = "Thank You";
+     document.querySelector('#score').innerHTML = "Your score is: "+c;
+     document.querySelector('#IQ').innerHTML ="Your IQ is:"+(c/5)*100;
+
+    }
+  });
+
+</script>
+
+
 {% endblock %}
 {% block body_block%}
 <div class="container">
 
 <div class="jumbotron container">
   {%if registered %}
-    <h1>Thank you</h1>
+    <h1 id="welcome">Welcome</h1>
         <link href="https://fonts.googleapis.com/css?family=Lilita+One" rel="stylesheet">
 
         <p>The average of first 50 natural numbers is ………….</p>
         <form class="" action="index.html" method="post">
-          <input type="radio" name="q1" value="a"> A <br>
-          <input type="radio" name="q1" value="b"> B <br>
-          <input type="radio" name="q1" value="c"> C
+          <input type="radio" name="q1" value="a"> A. 25.30 <br>
+          <input type="radio" name="q1" value="b"> B. 25.5<br>
+          <input type="radio" name="q1" value="c"> C. 25.00
         </form>
         <p> A fraction which bears the same ratio to 1/27 as 3/11 bear to 5/9 is equal to ……….. .</p>
         <form class="" action="index.html" method="post">
-          <input type="radio" name="q2" value="a"> A <br>
-          <input type="radio" name="q2" value="b"> B <br>
-          <input type="radio" name="q2" value="c"> C
+          <input type="radio" name="q2" value="a"> A. 1/55<br>
+          <input type="radio" name="q2" value="b"> B. 55 <br>
+          <input type="radio" name="q2" value="c">  C. 3/11
         </form>
         <p>The number of 3-digit numbers divisible by 6, is ………….. .</p>
         <form class="" action="index.html" method="post">
@@ -32,17 +53,19 @@
         </form>
         <p>What is 1004 divided by 2?</p>
         <form class="" action="index.html" method="post">
-          <input type="radio" name="q4" value="a"> A <br>
-          <input type="radio" name="q4" value="b"> B <br>
-          <input type="radio" name="q4" value="c"> C
+          <input type="radio" name="q4" value="a"> A. 149 <br>
+          <input type="radio" name="q4" value="b">B. 166<br>
+          <input type="radio" name="q4" value="c"> C. 150
         </form>
         <p>A clock strikes once at 1 o’clock, twice at 2 o’clock, thrice at 3 o’clock and so on. How many times will it strike in 24 hours?</p>
         <form class="" action="index.html" method="post">
-          <input type="radio" name="q1" value="a"> A <br>
-          <input type="radio" name="q1" value="b"> B <br>
-          <input type="radio" name="q1" value="c"> C
+          <input type="radio" name="q1" value="a"> A. 52 <br>
+          <input type="radio" name="q1" value="b"> B. 502<br>
+          <input type="radio" name="q1" value="c"> C. 520
         </form>
-    <button type="submit" name="button">GENERATE SCORE</button>
+    <button id="btn" type="submit" name="button">GENERATE SCORE</button>
+    <h1 id="score"></h1>
+    <h1 id="IQ"></h1>
 
 
   {%else%}
