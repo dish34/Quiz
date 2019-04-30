@@ -9,8 +9,11 @@
   document.querySelector('button').onclick=count;
     let c=1;
     function count(){
-     if(c!=5)
+     if(c!=10)
        c++;
+     else if (c==3) {
+       c+=2;
+     }
      else {
        c--;
      }
@@ -47,9 +50,9 @@
         </form>
         <p>The number of 3-digit numbers divisible by 6, is ………….. .</p>
         <form class="" action="index.html" method="post">
-          <input type="radio" name="q3" value="a"> A <br>
-          <input type="radio" name="q3" value="b"> B <br>
-          <input type="radio" name="q3" value="c"> C
+          <input type="radio" name="q3" value="a"> A. 150 <br>
+          <input type="radio" name="q3" value="b"> B. 160<br>
+          <input type="radio" name="q3" value="c"> C. 170
         </form>
         <p>What is 1004 divided by 2?</p>
         <form class="" action="index.html" method="post">
@@ -62,6 +65,39 @@
           <input type="radio" name="q1" value="a"> A. 52 <br>
           <input type="radio" name="q1" value="b"> B. 502<br>
           <input type="radio" name="q1" value="c"> C. 520
+        </form>
+        <p>Which answer expresses the meaning of the specified word best?</p>
+        <form class="" action="index.html" method="post">
+          <input type="radio" name="q" value="a">A. compassionate
+          <input type="radio" name="q" value="b">B. comforting<br>
+          <input type="radio" name="q" value="c">C. explanatory<br>
+        </form>
+        <p>Which number logically follows this series?
+             4     6     9     6     14     6      ...
+        </p>
+        <form class="" action="index.html" method="post">
+          <input type="radio" name="q" value="a">A. 6<br>
+          <input type="radio" name="q" value="b">B. 17<br>
+          <input type="radio" name="q" value="c">C. 19
+        </form>
+        <p>Which conclusion follows from the statements with absolute certainty?</p>
+        <form class="" action="index.html" method="post">
+            <input type="radio" name="q" value="a"> A. all stamp collectors are architects<br>
+            <input type="radio" name="q" value="b"> B. architects are not drones<br>
+            <input type="radio" name="q" value="c"> C. no stamp collectors are drones
+        </form>
+        <p>Which answer expresses the meaning opposite of that of the specified word best?
+        tough</p>
+        <form class="" action="index.html" method="post">
+          <input type="radio" name="q" value="a">A. cowardly<br>
+          <input type="radio" name="q" value="b">B. starch<br>
+          <input type="radio" name="q" value="c">C. strong
+        </form>
+        <p>Water is to a pipe as ? is to a wire.</p>
+        <form class="" action="index.html" method="post">
+<input type="radio" name="q" value="a">A. Cord <br>
+<input type="radio" name="q" value="b">B. electricity <br>
+<input type="radio" name="q" value="c">C. heat
         </form>
     <button id="btn" type="submit" name="button">GENERATE SCORE</button>
     <h1 id="score"></h1>
