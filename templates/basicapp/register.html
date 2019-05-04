@@ -3,28 +3,7 @@
 
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'css/quiz.css' %}">
-<script type="text/javascript">
-  document.addEventListener('DOMContentLoaded',function(){
 
-  document.querySelector('button').onclick=count;
-    let c=1;
-    function count(){
-     if(c!=10)
-       c++;
-     else if (c==3) {
-       c+=2;
-     }
-     else {
-       c--;
-     }
-     document.querySelector('#welcome').innerHTML = "Thank You";
-     document.querySelector('#score').innerHTML = "Your score is: "+c;
-     document.querySelector('#IQ').innerHTML ="Your IQ is:"+(c/5)*200;
-
-    }
-  });
-
-</script>
 
 
 {% endblock %}
@@ -35,6 +14,7 @@
   {%if registered %}
     <h1 id="welcome">Welcome</h1>
         <link href="https://fonts.googleapis.com/css?family=Lilita+One" rel="stylesheet">
+        <div id="time">Time left = <span id="timer"></span></div>
 
         <p>The average of first 50 natural numbers is ………….</p>
         <form class="" action="index.html" method="post">
@@ -103,7 +83,47 @@
     <h1 id="score"></h1>
     <h1 id="IQ"></h1>
 
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded',function(){
 
+      document.querySelector('button').onclick=count;
+        let c=1;
+        function count(){
+         if(c!=10)
+           c++;
+         else if (c==3) {
+           c+=2;
+         }
+         else {
+           c--;
+         }
+         document.querySelector('#welcome').innerHTML = "Thank You";
+         document.querySelector('#score').innerHTML = "Your score is: "+c;
+         document.querySelector('#IQ').innerHTML ="Your IQ is:"+(c/5)*200;
+
+        }
+      });
+      document.getElementById('timer').innerHTML =15 + ':' + 00;
+    startTimer();
+
+    function startTimer() {
+    var presentTime = document.getElementById('timer').innerHTML;
+    var timeArray = presentTime.split(/[:]+/);
+    var m = timeArray[0];
+    var s = checkSecond((timeArray[1] - 1));
+    if(s==59){m=m-1}
+    //if(m<0){alert('timer completed')}
+
+    document.getElementById('timer').innerHTML = m + ":" + s;
+    setTimeout(startTimer, 1000);
+    }
+
+    function checkSecond(sec) {
+    if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
+    if (sec < 0) {sec = "59"};
+    return sec;
+    }
+    </script>
   {%else%}
     <h1>Register here!</h1>
     <h3>Fill out the form:</h3>
